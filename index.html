@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Adding content with document.createElement</title>
+    <style>
+        .bar {
+            background: gray;
+            height: 20px;
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Adding content with document.createElement</h1>
+    <div id="main"></div>
+    <script>
+        const destination = document.getElementById("main")
+        const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940,
+            472
+        ];
+
+        // Step 1
+        let div1 = document.createElement("div");
+        for (let i = 1; i <= 20; i++) {
+            let newContent = document.createTextNode(String(i) + " ");
+            div1.appendChild(newContent);
+        }
+        destination.appendChild(div1);
+
+        // Step 2
+
+        let div2 = document.createElement("div");
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div2.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div2);
+
+        // Step 3
+
+        let div3 = document.createElement("div");
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 !== 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div3.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div3);
+
+        // Step 4
+
+        let div4 = document.createElement("div");
+        for (let i = 1; i <= 100; i++) {
+            if (i % 5 == 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div4.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div4);
+
+        // Step 5
+
+        let div5 = document.createElement("div");
+        for (let i = 0; i <= 10; i++) {
+            let newContent = document.createTextNode(i * i + " ");
+            div5.appendChild(newContent);
+
+        }
+        destination.appendChild(div5);
+
+        // Step 6
+
+        let div6 = document.createElement("div");
+        for (let i = 20; i > 0; i -= 1) {
+            let newContent = document.createTextNode(String(i) + " ");
+            div6.appendChild(newContent);
+        }
+        destination.appendChild(div6);
+
+        // Step 7
+
+        let div7 = document.createElement("div");
+        for (let i = 20; i > 0; i -= 1) {
+            if (i % 2 == 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div7.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div7);
+
+        // Step 8
+
+        let div8 = document.createElement("div");
+        for (let i = 20; i > 0; i -= 1) {
+            if (i % 2 !== 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div8.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div8);
+
+        // Step 9
+
+        let div9 = document.createElement("div");
+        for (let i = 100; i > 0; i -= 1) {
+            if (i % 5 == 0) {
+                let newContent = document.createTextNode(String(i) + " ");
+                div9.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div9);
+
+        // Step 10
+
+        let div10 = document.createElement("div");
+        for (let i = 10; i > 0; i -= 1) {
+            let newContent = document.createTextNode(i * i + " ");
+            div10.appendChild(newContent);
+
+        }
+        destination.appendChild(div10);
+
+        // Step 11
+
+        let div11 = document.createElement("div");
+        for (let i = sampleArray; i < sampleArray.length; i++) {
+            let newContent = document.createTextNode(String(i) + " ");
+            div11.appendChild(newContent);
+        }
+        destination.appendChild(div11);
+
+        // Step 12
+
+        let div12 = document.createElement("div");
+        for (let i = 0; i < sampleArray.length; i++) {
+            if (sampleArray[i] % 2 == 0) {
+                let newContent = document.createTextNode(sampleArray[i] + " ");
+                div12.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div12);
+
+        // Step 13
+
+        let div13 = document.createElement("div");
+        for (let i = 0; i < sampleArray.length; i++) {
+            if (sampleArray[i] % 2 !== 0) {
+                let newContent = document.createTextNode(sampleArray[i] + " ");
+                div13.appendChild(newContent);
+            }
+        }
+        destination.appendChild(div13);
+
+        // Step 14
+
+        let div14 = document.createElement("div");
+        for (let i = 0; i < sampleArray.length; i++) {
+
+            let newContent = document.createTextNode(sampleArray[i] * sampleArray[i] + " ");
+            div14.appendChild(newContent);
+
+        }
+        destination.appendChild(div14);
+
+        // Step 15
+
+        let div15 = document.createElement("div");
+
+
+        function sum() {
+            let total = 0;
+            for (let i = 1; i < 20; i++) {
+                total += i
+            }
+            let newContent = document.createTextNode(total);
+            div15.appendChild(newContent);
+            destination.appendChild(div15);
+        }
+        sum();
+
+        // Step 16
+
+        let div16 = document.createElement("div");
+
+
+        function sum2() {
+            let total = 0;
+            for (let i = 0; i < sampleArray.length; i++) {
+                total += sampleArray[i]
+            }
+            let newContent = document.createTextNode(total);
+            div16.appendChild(newContent);
+            destination.appendChild(div16);
+        }
+        sum2();
+
+        // Step 17
+
+        let div17 = document.createElement("div");
+
+        function smaller() {
+            var smallestNumber = sampleArray[1];
+            for (var i = 0; i < sampleArray.length; i++) {
+                if (sampleArray[i] < smallestNumber) {
+
+                    smallestNumber = sampleArray[i];
+                    console.log(smallestNumber);
+                }
+            }
+            let newContent = document.createTextNode(smallestNumber);
+            div17.appendChild(newContent);
+            destination.appendChild(div17);
+        }
+        smaller();
+
+        // Step 18
+
+        let div18 = document.createElement("div");
+
+        function larger() {
+            var largestNumber = 0;
+            for (var i = 0; i < sampleArray.length; i++) {
+                if (sampleArray[i] > largestNumber) {
+
+                    largestNumber = sampleArray[i];
+                    console.log(largestNumber);
+                }
+            }
+            let newContent = document.createTextNode(largestNumber);
+            div18.appendChild(newContent);
+            destination.appendChild(div18);
+        }
+        larger();
+
+        // Step 19
+
+        let div19 = document.createElement("div");
+
+        for (let i = 1; i <= 20; i++) {
+
+            let box1 = document.createElement("div");
+            box1.className = "bar";
+            div19.appendChild(box1);
+
+            // let newContent = document.createTextNode(String(i) + " ");
+            // div19.appendChild(newContent);
+        }
+        destination.appendChild(div19);
+
+        // Step 20
+
+        let div20 = document.createElement("div");
+
+        for (let i = 1; i <= 20; i++) {
+
+            let box1 = document.createElement("div");
+            box1.className = "bar";
+            div20.appendChild(box1);
+
+            box1.style.width = i*100 + "px";
+
+            // let newContent = document.createTextNode(String(i) + " ");
+            // div19.appendChild(newContent);
+        }
+        destination.appendChild(div20);
+
+
+        
+       
+        // let div17 = document.createElement("div");
+
+
+        // function sum3() {
+        //     let total = 0;
+        //     for (let subArrayIndex = 0; subArrayIndex < arr[arrayIndex].length; subArrayIndex++) {
+        //         total += sampleArray[i]
+        //     }
+        //     let newContent = document.createTextNode(total);
+        //     div17.appendChild(newContent);
+        //     destination.appendChild(div17);
+        // }
+        // sum3();
+
+        // Step 14
+
+        // var div14 = document.createElement("div");
+
+        // for (let i = 0; i < sampleArray.length; i++) {
+        //     if (sampleArray[i] % 2 !== 0) {
+        //         var newText = document.createTextNode(" " + sampleArray[i] + " ");
+        //         div14.appendChild(newText);
+        //     }
+        //     destination.appendChild(div14);
+        // }
+
+        // // Step 15
+
+        // var newElement = document.createElement("div");
+        // newElement.className = "count";
+        // const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940,
+        //     472
+        // ];
+        // for (let i = 0; i < sampleArray.length; i++) {
+        //     if (sampleArray[i] % 2 !== 0) {
+        //         var newText = document.createTextNode(" " + sampleArray[i] + " ");
+        //         newElement.appendChild(newText);
+        //     }
+        //     var destination = document.getElementById("d1");
+        //     destination.appendChild(newElement);
+        // }
+    </script>
+</body>
+
+</html>
