@@ -127,14 +127,14 @@
         }
         destination.appendChild(div10);
 
-        // Step 11
+         // Step 11
 
-        let div11 = document.createElement("div");
-        for (let i = sampleArray; i < sampleArray.length; i++) {
-            let newContent = document.createTextNode(String(i) + " ");
-            div11.appendChild(newContent);
-        }
-        destination.appendChild(div11);
+         let div11 = document.createElement("div");
+         for (let i = 0; i < sampleArray.length; i++) {
+             let newContent = document.createTextNode(sampleArray[i] + " ");
+             div11.appendChild(newContent);
+         }
+         destination.appendChild(div11);
 
         // Step 12
 
@@ -176,7 +176,7 @@
 
         function sum() {
             let total = 0;
-            for (let i = 1; i < 20; i++) {
+            for (let i = 1; i <= 20; i++) {
                 total += i
             }
             let newContent = document.createTextNode(total);
